@@ -427,7 +427,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       </div>
       <ul class="facts">
         <li>SMS funciona sem internet</li>
-        <li>Celular dedicado, já configurado</li>
+        <li>No celular ou no relógio</li>
         <li>Monitoramento pela Cripton</li>
       </ul>
     </div>
@@ -443,7 +443,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
     <div class="sec-head">
       <span class="eyebrow">Passo a passo</span>
       <h2>Três gestos, de qualquer tela do celular</h2>
-      <p class="lead">O DSPMC fica por cima de qualquer aplicativo. Não é preciso desbloquear, procurar ícone ou abrir nada.</p>
+      <p class="lead">No DSPMC Celular, o botão fica por cima de qualquer aplicativo. Não é preciso desbloquear, procurar ícone ou abrir nada.</p>
     </div>
     <div class="steps">
       <figure class="step" style="margin:0">
@@ -486,15 +486,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
     </div>
     <div>
       <span class="eyebrow">No pulso</span>
-      <h2 style="margin-top:14px">DSPMC no smartwatch</h2>
-      <p class="lead" style="margin-top:14px">Quando o celular estiver longe da mão, o pedido de ajuda continua a um toque. Veja como o app funciona em um relógio com Wear OS e 4G.</p>
+      <h2 style="margin-top:14px">DSPMC Relógio, sem precisar de celular</h2>
+      <p class="lead" style="margin-top:14px">Para quem prefere o botão de pânico no pulso. O relógio é um aparelho DSPMC completo, com chip 4G próprio: envia a localização por SMS aos contatos, avisa a central Cripton e grava o áudio do ambiente, tudo sozinho, sem estar ligado a um celular.</p>
       <div class="wtabs" role="group" aria-label="Telas do relógio">
         <button type="button" data-w="1" aria-pressed="true"><b>1</b>Mostrador</button>
         <button type="button" data-w="2" aria-pressed="false"><b>2</b>Botão SOS</button>
         <button type="button" data-w="3" aria-pressed="false"><b>3</b>Acionado</button>
       </div>
       <p class="wdesc" id="wdesc" aria-live="polite"></p>
-      <p class="note"><b>Em desenvolvimento.</b> Simulação de como o app vai funcionar em relógios Wear OS com 4G, como o Galaxy Watch8 LTE.</p>
+      <p class="note"><b>Em desenvolvimento.</b> Simulação de como o DSPMC vai funcionar em relógios Wear OS com chip 4G próprio, como o Galaxy Watch8 LTE.</p>
     </div>
   </div>
 </section>
@@ -559,7 +559,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
         <a class="btn btn-red" href="#contato">Quero o celular</a>
       </div>
       <div class="price">
-        <div class="pt"><span class="ico"><svg><use href="#i-clock"/></svg></span><div><h3>DSPMC Relógio</h3><span class="tagp">smartwatch com 4G</span></div></div>
+        <div class="pt"><span class="ico"><svg><use href="#i-clock"/></svg></span><div><h3>DSPMC Relógio</h3><span class="tagp">independente, chip 4G próprio</span></div></div>
         <div class="big"><b>R$ 300</b><span>adesão, no 1º mês</span></div>
         <div class="then">+ <b>11 × R$ 260</b> de mensalidade</div>
         <div class="tot">Contrato de 12 meses · total de R$ 3.160</div>
@@ -613,7 +613,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <details><summary>Posso usar no meu próprio celular?</summary><p>O DSPMC é entregue em um celular Android dedicado, configurado pela Cripton em modo exclusivo, para garantir que o botão esteja sempre funcionando.</p></details>
       <details><summary>Serve para crianças?</summary><p>Sim. O responsável legal contrata o serviço, cadastra os contatos de emergência e a criança usa o aparelho.</p></details>
       <details><summary>Quem vê meus dados e vídeos?</summary><p>Apenas os contatos de emergência que você cadastrar e a equipe de monitoramento da Cripton, conforme o contrato e a LGPD. Você pode pedir acesso ou exclusão dos seus dados.</p></details>
-      <details><summary>Funciona no relógio?</summary><p>A versão para smartwatch Wear OS com 4G está em desenvolvimento. Veja a simulação na seção Relógio.</p></details>
+      <details><summary>Funciona no relógio? Preciso ter o celular junto?</summary><p>Sim. O DSPMC Relógio é um aparelho independente, com chip próprio, e faz o mesmo que o celular sem precisar dele: SMS com localização aos contatos, alerta para a central e gravação. Como o relógio não tem câmera, ele grava o áudio do ambiente em vez de vídeo. A versão para relógio está em desenvolvimento; veja a simulação na seção Relógio.</p></details>
     </div>
   </div>
 </section>
@@ -669,7 +669,7 @@ const CONTATO = {
   const texts={
     1:'<strong>Mostrador.</strong> O atalho SOS fica no próprio mostrador do relógio, ao lado da bateria e do sinal. Um toque abre o botão de pânico.',
     2:'<strong>Botão SOS.</strong> Segure por 2 segundos. O anel vermelho em volta mostra o tempo, para evitar acionamento por engano. Experimente segurar no relógio ao lado.',
-    3:'<strong>Acionado.</strong> O relógio envia a localização pelo 4G próprio, avisa os contatos e a central, e grava o áudio do ambiente. O alerta aparece também no celular. Segure 5 segundos para desativar.'
+    3:'<strong>Acionado.</strong> Com o próprio chip, o relógio envia SMS com a localização aos contatos, avisa a central Cripton e grava o áudio do ambiente. Não depende de celular por perto. Segure 5 segundos para desativar.'
   };
   const tabs=[...document.querySelectorAll('.wtabs button')];
   let holdT=null, arc=dw.querySelector('.arc');
