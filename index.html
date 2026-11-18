@@ -179,8 +179,8 @@ section{padding-block:clamp(64px,9vw,112px)}
 .bezel{width:100%;height:100%;border-radius:50%;background:#050608;padding:5%;box-shadow:inset 0 0 0 2px #1d2027}
 .wscreen{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:#000;container-type:inline-size;color:#fff}
 .wv{position:absolute;inset:0;display:grid;place-items:center;text-align:center;opacity:0;transition:opacity .35s}
-.watch[data-s="1"] .w1,.watch[data-s="2"] .w3,.watch[data-s="3"] .w4{opacity:1}
-.wv{pointer-events:none}.watch[data-s="1"] .w1,.watch[data-s="2"] .w3,.watch[data-s="3"] .w4{pointer-events:auto}
+.watch[data-s="1"] .w1,.watch[data-s="2"] .w3,.watch[data-s="3"] .w3{opacity:1}
+.wv{pointer-events:none}.watch[data-s="1"] .w1,.watch[data-s="2"] .w3,.watch[data-s="3"] .w3{pointer-events:auto}
 /* mostrador */
 .w1 .face{display:grid;gap:1cqw;justify-items:center}
 .w1 .date{font:600 6.4cqw/1 var(--f-body);color:#b8c0cf;letter-spacing:.04em}
@@ -194,13 +194,6 @@ section{padding-block:clamp(64px,9vw,112px)}
 .w1 .c.sos::after{content:"";position:absolute;inset:-1.6cqw;border-radius:50%;border:.5cqw solid rgba(232,52,63,.55);animation:sosring 2s ease-out infinite}
 @keyframes sosglow{0%,100%{box-shadow:0 0 10px rgba(232,52,63,.5)}50%{box-shadow:0 0 22px rgba(232,52,63,.95)}}
 @keyframes sosring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
-/* tela apagada, alerta continua */
-.w4{background:#000;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:none}
-.w4 .off{display:grid;gap:2.6cqw;justify-items:center}
-.w4 .rdot{width:7cqw;aspect-ratio:1;border-radius:50%;background:var(--red);box-shadow:0 0 0 2cqw rgba(232,52,63,.18),0 0 18px rgba(232,52,63,.8);animation:blink 1.4s steps(2) infinite}
-.w4 .t1{font:700 5.4cqw/1 var(--f-display);letter-spacing:.14em;color:#ff6b72}
-.w4 .t2{font:500 4.2cqw/1.3 var(--f-body);color:#5f6b80;max-width:46cqw}
-.w4 .aod{position:absolute;top:13cqw;font:600 8cqw/1 var(--f-body);color:#2b313d;font-variant-numeric:tabular-nums}
 .w3{cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:none}
 .wv .hold{position:absolute;inset:3cqw;pointer-events:none;transform:rotate(-90deg);width:auto;height:auto}
 .wv .hold circle{fill:none;stroke-width:1.4}
@@ -557,7 +550,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <div class="wtabs" role="group" aria-label="Telas do relógio">
         <button type="button" data-w="1" aria-pressed="true"><b>1</b>Mostrador</button>
         <button type="button" data-w="2" aria-pressed="false"><b>2</b>Acionado</button>
-        <button type="button" data-w="3" aria-pressed="false"><b>3</b>Tela apagada</button>
       </div>
       <p class="wdesc" id="wdesc" aria-live="polite"></p>
       <p class="note"><b>Em desenvolvimento.</b> Simulação de como o DSPMC vai funcionar em relógios Wear OS com chip 4G próprio, como o Galaxy Watch8 LTE.</p>
@@ -768,7 +760,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <span class="hint">Toque no SOS para acionar</span></div>
     <div class="wv w3"><div class="core"><div class="badge"><b>ACIONADO</b><small>segure 5 s p/ desativar</small></div>
       <ul><li>3 contatos avisados</li><li>Central Cripton</li><li class="recl">Gravando áudio</li></ul></div><svg class="hold" viewBox="0 0 36 36"><circle class="harc" cx="18" cy="18" r="17" stroke="#fff" stroke-linecap="round" stroke-dasharray="106.8" stroke-dashoffset="106.8"/></svg></div>
-    <div class="wv w4"><span class="aod">10:09</span><div class="off"><span class="rdot"></span><span class="t1">SOS ATIVO</span><span class="t2">Tela apagada. O alerta continua até você desativar</span></div><svg class="hold" viewBox="0 0 36 36"><circle class="harc" cx="18" cy="18" r="17" stroke="#ff6b72" stroke-linecap="round" stroke-dasharray="106.8" stroke-dashoffset="106.8"/></svg></div>
   </div></div></div>
 </template>
 
@@ -799,20 +790,18 @@ const CONTATO = {
   const dw=document.getElementById('demoWatch'), desc=document.getElementById('wdesc');
   const texts={
     1:'<strong>Mostrador.</strong> O SOS fica no próprio mostrador, ao lado da bateria e do sinal. Um toque no círculo vermelho já aciona o alerta, sem abrir outra tela. Experimente tocar no relógio ao lado.',
-    2:'<strong>Acionado.</strong> Com o próprio chip, o relógio envia SMS com a localização aos contatos, avisa a central Cripton e grava o áudio do ambiente. Não depende de celular por perto. Para desativar, segure a tela por 5 segundos.',
-    3:'<strong>Tela apagada.</strong> Se a tela apagar, ou se você apagar de propósito para não chamar atenção, o alerta continua ativo: localização, central e gravação seguem até você desativar segurando 5 segundos ou encerrar pelas outras formas, como pela central Cripton.'
+    2:'<strong>Acionado.</strong> Com o próprio chip, o relógio envia SMS com a localização aos contatos, avisa a central Cripton e grava o áudio do ambiente. Não depende de celular por perto. Se a tela apagar, o alerta continua ativo. Para desativar, segure a tela por 5 segundos ou encerre pelas outras formas, como pela central Cripton.'
   };
   const tabs=[...document.querySelectorAll('.wtabs button')];
   let offT=null, holdT=null, holding=false;
   function resetArcs(){ dw.querySelectorAll('.harc').forEach(a=>{ a.style.transition='none'; a.style.strokeDashoffset='106.8'; }); }
-  function setW(n){ clearTimeout(offT); clearTimeout(holdT); holding=false; resetArcs(); dw.dataset.s=n; desc.innerHTML=texts[n]; tabs.forEach(b=>b.setAttribute('aria-pressed', b.dataset.w==n));
-    if(n===2) offT=setTimeout(()=>{ if(!holding) setW(3); },6000); }
+  function setW(n){ clearTimeout(offT); clearTimeout(holdT); holding=false; resetArcs(); dw.dataset.s=n; desc.innerHTML=texts[n]; tabs.forEach(b=>b.setAttribute('aria-pressed', b.dataset.w==n)); }
   tabs.forEach(b=>b.addEventListener('click',()=>setW(+b.dataset.w)));
   dw.querySelector('.sos').addEventListener('click',()=>setW(2));
-  ['.w3','.w4'].forEach(sel=>{
+  ['.w3'].forEach(sel=>{
     const v=dw.querySelector(sel), arc=v.querySelector('.harc');
     const start=e=>{ if(e.button>0) return; holding=true; clearTimeout(offT); arc.getBoundingClientRect(); arc.style.transition='stroke-dashoffset 5s linear'; arc.style.strokeDashoffset='0'; holdT=setTimeout(()=>setW(1),5000); };
-    const stop=()=>{ if(!holding) return; holding=false; clearTimeout(holdT); resetArcs(); if(dw.dataset.s==='2') offT=setTimeout(()=>setW(3),6000); };
+    const stop=()=>{ if(!holding) return; holding=false; clearTimeout(holdT); resetArcs();  };
     v.addEventListener('pointerdown',start); v.addEventListener('pointerup',stop); v.addEventListener('pointerleave',stop); v.addEventListener('pointercancel',stop);
   });
   setW(1);
