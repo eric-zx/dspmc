@@ -314,6 +314,14 @@ section{padding-block:clamp(64px,9vw,112px)}
 @media (max-width:980px){.terms{grid-template-columns:1fr;max-width:560px}}
 @media (max-width:720px){.rules{grid-template-columns:1fr}}
 
+.pcond{border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.pcond summary{padding:11px 14px;font-size:14px}
+.pcond summary::after{font-size:18px}
+.pcond dl{margin:0;padding:0 14px 6px;display:grid}
+.pcond dl > div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.pcond dt{color:var(--muted)}
+.pcond dd{margin:0}
+
 /* ---------- Contato ---------- */
 .contact{background:var(--bg2);border-top:1px solid var(--line)}
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
@@ -610,6 +618,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
         <div class="big"><b>R$ 499</b><span>adesão, no 1º mês</span></div>
         <div class="then">+ <b>11 × R$ 129,90</b> de mensalidade</div>
         <div class="tot">Contrato de 12 meses · total de R$ 1.927,90 · ou <b>R$ 1.699,90 à vista no Pix</b> · chip de dados e SMS incluso</div>
+        <details class="pcond"><summary>Condições do contrato</summary><dl><div><dt>Vigência</dt><dd>12 meses a partir da entrega</dd></div><div><dt>Aparelho</dt><dd>Celular Android em comodato, devolvido ao final</dd></div><div><dt>Chip</dt><dd>Dados e SMS inclusos</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam (ex.: faltando 8, R$ 207,84)</dd></div><div><dt>Perda ou dano por culpa</dt><dd>R$ 650,00. Roubo com B.O.: 50%</dd></div></dl></details>
         <a class="btn btn-red" href="#contato" data-para="Modalidade 1: aparelho DSPMC">Quero o aparelho</a>
       </div>
       <div class="price">
@@ -619,6 +628,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
         <div class="big"><b>R$ 149</b><span>adesão, no 1º mês</span></div>
         <div class="then">+ <b>11 × R$ 59,90</b> de mensalidade</div>
         <div class="tot">Contrato de 12 meses · total de R$ 807,90 · ou <b>R$ 709,90 à vista no Pix</b> · ao final, sem renovação, o app é bloqueado à distância</div>
+        <details class="pcond"><summary>Condições do contrato</summary><dl><div><dt>Vigência</dt><dd>12 meses a partir da instalação</dd></div><div><dt>Aparelho</dt><dd>O seu próprio Android, sem devolução</dd></div><div><dt>Chip</dt><dd>O seu, com o plano que você já usa</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam (ex.: faltando 8, R$ 95,84)</dd></div><div><dt>Ao final sem renovar</dt><dd>O app é bloqueado à distância</dd></div></dl></details>
         <a class="btn btn-ghost" href="#contato" data-para="Modalidade 2: app no meu celular">Quero no meu celular</a>
       </div>
       <div class="price">
@@ -628,6 +638,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
         <div class="big"><b>R$ 1.199</b><span>adesão, no 1º mês</span></div>
         <div class="then">+ <b>11 × R$ 149,90</b> de mensalidade</div>
         <div class="tot">Contrato de 12 meses · total de R$ 2.847,90 · ou <b>R$ 2.509,90 à vista no Pix</b> · chip 4G incluso</div>
+        <details class="pcond"><summary>Condições do contrato</summary><dl><div><dt>Vigência</dt><dd>12 meses a partir da entrega</dd></div><div><dt>Aparelho</dt><dd>Relógio 4G em comodato, devolvido ao final</dd></div><div><dt>Chip</dt><dd>Chip 4G de dados e SMS incluso</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam (ex.: faltando 8, R$ 239,84)</dd></div><div><dt>Perda ou dano por culpa</dt><dd>R$ 1.300,00. Roubo com B.O.: 50%</dd></div></dl></details>
         <a class="btn btn-ghost" href="#contato" data-para="Modalidade 3: relógio">Quero o relógio</a>
       </div>
     </div>
@@ -643,13 +654,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Contrato</span>
-      <h2>Como fica o seu contrato</h2>
-      <p class="lead">Tudo o que você assina, por modalidade, antes de fechar. Contrato de prestação de serviço de 12 meses, com nota fiscal de cada pagamento.</p>
-    </div>
-    <div class="terms">
-      <div class="term"><span class="k">MODALIDADE 1</span><h3>Aparelho DSPMC</h3><dl><div><dt>Vigência</dt><dd>12 meses a partir da entrega</dd></div><div><dt>Adesão (1º mês)</dt><dd>R$ 499,00, sem mensalidade no 1º mês</dd></div><div><dt>Mensalidades</dt><dd>11 × R$ 129,90 (do 2º ao 12º mês)</dd></div><div><dt>Total do contrato</dt><dd>R$ 1.927,90</dd></div><div><dt>À vista no Pix</dt><dd>R$ 1.699,90</dd></div><div><dt>Aparelho</dt><dd>Celular Android cedido em comodato. Continua da Cripton e é devolvido ao final</dd></div><div><dt>Chip</dt><dd>Dados e SMS inclusos</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam. Ex.: faltando 8, R$ 207,84</dd></div><div><dt>Perda ou dano por culpa</dt><dd>R$ 650,00 (custo de reposição). Roubo com B.O.: 50%</dd></div></dl></div>
-      <div class="term"><span class="k">MODALIDADE 2</span><h3>No seu celular</h3><dl><div><dt>Vigência</dt><dd>12 meses a partir da instalação</dd></div><div><dt>Adesão (1º mês)</dt><dd>R$ 149,00, sem mensalidade no 1º mês</dd></div><div><dt>Mensalidades</dt><dd>11 × R$ 59,90 (do 2º ao 12º mês)</dd></div><div><dt>Total do contrato</dt><dd>R$ 807,90</dd></div><div><dt>À vista no Pix</dt><dd>R$ 709,90</dd></div><div><dt>Aparelho</dt><dd>O seu próprio celular Android. Não há devolução</dd></div><div><dt>Chip</dt><dd>O seu, com o plano que você já usa</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam. Ex.: faltando 8, R$ 95,84</dd></div><div><dt>Ao final sem renovar</dt><dd>O app é bloqueado à distância</dd></div></dl></div>
-      <div class="term"><span class="k">MODALIDADE 3</span><h3>DSPMC Relógio</h3><dl><div><dt>Vigência</dt><dd>12 meses a partir da entrega</dd></div><div><dt>Adesão (1º mês)</dt><dd>R$ 1.199,00, sem mensalidade no 1º mês</dd></div><div><dt>Mensalidades</dt><dd>11 × R$ 149,90 (do 2º ao 12º mês)</dd></div><div><dt>Total do contrato</dt><dd>R$ 2.847,90</dd></div><div><dt>À vista no Pix</dt><dd>R$ 2.509,90</dd></div><div><dt>Aparelho</dt><dd>Relógio 4G cedido em comodato. Continua da Cripton e é devolvido ao final</dd></div><div><dt>Chip</dt><dd>Chip 4G de dados e SMS incluso</dd></div><div><dt>Saída antecipada</dt><dd>20% das mensalidades que faltam. Ex.: faltando 8, R$ 239,84</dd></div><div><dt>Perda ou dano por culpa</dt><dd>R$ 1.300,00 (custo de reposição). Roubo com B.O.: 50%</dd></div></dl></div>
+      <h2>Regras que valem para todas as modalidades</h2>
+      <p class="lead">Contrato de prestação de serviço de 12 meses, com nota fiscal de cada pagamento. As condições de cada modalidade estão nos cartões acima, em "Condições do contrato".</p>
     </div>
     <div class="rules">
       <div><h4>Arrependimento em 7 dias</h4><p>Contratou pela internet, WhatsApp, telefone ou em casa? Pode desistir em até 7 dias, com devolução integral, devolvendo o aparelho em bom estado (art. 49 do CDC).</p></div>
